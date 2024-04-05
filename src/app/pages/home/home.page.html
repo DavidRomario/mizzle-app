@@ -1,0 +1,18 @@
+<ion-content [fullscreen]="true">
+  <div class="containerLogo">
+    <img class="imgLogo" src="../../../assets/icon/Rectangle 2.png" alt="" />
+    <img class="imgIcon" src="../../../assets//icon//Logo.png" alt="" />
+  </div>
+  <div class="containerBtn">
+    <ion-button (click)="redirectTo('register')">Criar uma conta</ion-button>
+    <ion-button (click)="redirectTo('login')" class="btnEnter" fill="outline"
+      >Entrar</ion-button
+    >
+    <p>
+      Ao criar uma conta, você concorda com nossos
+      <strong><u routerLink="/terms">Termos</u></strong
+      >. Veja como usamos seus dados em nossa
+      <strong><u routerLink="/politics"> Política de Privacidade.</u></strong>
+    </p>
+  </div>
+</ion-content>

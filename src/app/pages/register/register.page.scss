@@ -2,35 +2,44 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    justify-content: center;
+    padding: 67px 24px 21px 24px;
+}
+
+
+ion-buttons {
+    margin-left: -10px;
+}
+
+ion-icon {
+    width: 32px;
+    height: 32px;
+}
+
+.row {
+    margin-left: -14px;
 }
 
 .containerInput {
-    width: 100%;
+    display: flex;
+    flex-direction: column;
     padding: 0px 24px;
 }
 
-// ion-content {
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: space-between
-// }
 
 .p1 {
     font-size: 24px;
-    padding: 0 95px 0 24px;
+    width: 271px;
+    height: 65px;
 }
 
 .p2 {
     font-size: 12px;
-    padding: 0px 24px;
-}
-
-.containerBtn {
-    display: flex;
-    flex-direction: column;
+    padding: 32px 24px 0px 24px;
 }
 
 .btnEnter {
     width: 100%;
-    padding: 0px 24px;
+    padding: 147px 24px 0px 24px;
+    --border-radius: 7px;
 }

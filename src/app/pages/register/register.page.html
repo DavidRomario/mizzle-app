@@ -1,33 +1,31 @@
 <ion-content [fullscreen]="true">
-  <div class="man">
-    <div class="containerBack">
-      <ion-buttons slot="start">
-        <ion-button defaultHref="/">
-          <ion-icon name="chevron-back-circle-outline"></ion-icon>
-        </ion-button>
-      </ion-buttons>
-      <p class="p1">Poderia nos fornecer o seu número? 😁</p>
-    </div>
-    <div class="containerInput">
-      <ion-row>
-        <ion-col size="3">
-          <ion-item>
-            <ion-input type="number" maxlength="2"></ion-input>
-          </ion-item>
-        </ion-col>
-        <ion-col>
-          <ion-item>
-            <ion-input type="number" maxlength="9"></ion-input>
-          </ion-item>
-        </ion-col>
-      </ion-row>
-    </div>
-    <div class="containerBtn">
-      <p class="p2">
-        Vamos enviar um código para confirmar seu número. Fique de olho na sua
-        caixa de mensagens. Tarifas de SMS e dados podem ser aplicáveis.
-      </p>
-      <ion-button class="btnEnter">Confirmar</ion-button>
-    </div>
+  <div class="containerBack">
+    <ion-buttons slot="start">
+      <ion-button class="btnInput" defaultHref="/">
+        <ion-icon name="chevron-back-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </div>
+  <div class="containerInput">
+    <p class="p1">Poderia nos fornecer o seu número? 😁</p>
+    <ion-row class="row">
+      <ion-col size="3">
+        <ion-item>
+          <ion-input type="tel" maxlength="3" value="+"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+          <ion-input type="tel" maxlength="11"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </div>
+  <div class="containerBtn">
+    <p class="p2">
+      Vamos enviar um código para confirmar seu número. Fique de olho na sua
+      caixa de mensagens. Tarifas de SMS e dados podem ser aplicáveis.
+    </p>
+    <ion-button class="btnEnter">Confirmar</ion-button>
   </div>
 </ion-content>

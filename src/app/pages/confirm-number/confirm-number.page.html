@@ -1,0 +1,58 @@
+<ion-content [fullscreen]="true">
+  <div class="containerBack">
+    <ion-buttons slot="start">
+      <ion-button class="btnInput" (click)="comeBack()">
+        <ion-icon name="chevron-back-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </div>
+  <div class="containerInput">
+    <p class="p1">Confirme seu número</p>
+    <p class="p2">
+      Digite o código que acabamos de enviar para o número
+      <strong>+55 *********78</strong>
+    </p>
+
+    <div class="check">
+      <div
+        class="square-box"
+        contenteditable="true"
+        maxlength="1"
+        type="tel"
+      ></div>
+      <div
+        class="square-box"
+        contenteditable="true"
+        maxlength="1"
+        type="tel"
+      ></div>
+      <div
+        class="square-box"
+        contenteditable="true"
+        maxlength="1"
+        type="tel"
+      ></div>
+      <div
+        class="square-box"
+        contenteditable="true"
+        maxlength="1"
+        type="tel"
+      ></div>
+      <div
+        class="square-box"
+        contenteditable="true"
+        maxlength="1"
+        type="tel"
+      ></div>
+      <div
+        class="square-box"
+        contenteditable="true"
+        maxlength="1"
+        type="tel"
+      ></div>
+    </div>
+    <p class="p3">
+      Não recebeu o código? <span class="blue-text">Reenviar código</span>
+    </p>
+  </div>
+</ion-content>

@@ -10,47 +10,17 @@
     <p class="p1">Confirme seu número</p>
     <p class="p2">
       Digite o código que acabamos de enviar para o número
-      <strong>+55 *********78</strong>
+      <strong>+</strong>
     </p>
-
     <div class="check">
-      <div
-        class="square-box"
-        contenteditable="true"
-        maxlength="1"
-        type="tel"
-      ></div>
-      <div
-        class="square-box"
-        contenteditable="true"
-        maxlength="1"
-        type="tel"
-      ></div>
-      <div
-        class="square-box"
-        contenteditable="true"
-        maxlength="1"
-        type="tel"
-      ></div>
-      <div
-        class="square-box"
-        contenteditable="true"
-        maxlength="1"
-        type="tel"
-      ></div>
-      <div
-        class="square-box"
-        contenteditable="true"
-        maxlength="1"
-        type="tel"
-      ></div>
-      <div
-        class="square-box"
-        contenteditable="true"
-        maxlength="1"
-        type="tel"
-      ></div>
+      <input class="error" type="tel" maxlength="1" (input)="onInput($event, 1)">
+      <input class="error" type="tel" maxlength="1" (input)="onInput($event, 2)">
+      <input class="error" type="tel" maxlength="1" (input)="onInput($event, 3)">
+      <input class="error" type="tel" maxlength="1" (input)="onInput($event, 4)">
+      <input class="error" type="tel" maxlength="1" (input)="onInput($event, 5)">
+      <input class="error" type="tel" maxlength="1" (input)="onInput($event, 6)">
     </div>
+    <p class="error-message" *ngIf="showErrorMessage">Ops! Código inválido ou expirado</p>
     <p class="p3">
       Não recebeu o código? <span class="blue-text">Reenviar código</span>
     </p>

@@ -18,17 +18,17 @@ ion-icon {
 .check {
     display: flex;
     justify-content:space-evenly;
-    padding: 32px 0px 182px 0px
+    padding-top: 32px
 }
 
-.square-box {
+input {
     width: 40px;
     height: 40px;
     border-radius: 10px;
     background-color: #f0f0f0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
+    border: none;
+    color: black;
     font-size: 24px;
 }
 
@@ -45,6 +45,7 @@ ion-icon {
 .p3 {
     font-size: 12px;
     margin: auto;
+    padding-top: 182px;
 }
 
 .blue-text {
@@ -58,3 +59,16 @@ ion-icon {
     flex-direction: column;
     padding: 0px 24px;
 }
+
+.error {
+    border-color: red; 
+  }
+
+.error-message {
+    font-size: 12px;
+    margin: auto;
+    color: #D32F2F;
+    padding-top: 14px;
+  }
+  
+  

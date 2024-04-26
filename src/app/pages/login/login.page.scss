@@ -1,0 +1,45 @@
+.containerBack {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 67px 24px 21px 24px;
+}
+
+
+ion-buttons {
+    margin-left: -10px;
+}
+
+ion-icon {
+    width: 32px;
+    height: 32px;
+}
+
+.row {
+    margin-left: -14px;
+}
+
+.containerInput {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 24px;
+}
+
+
+.p1 {
+    font-size: 24px;
+    width: 271px;
+    height: 65px;
+}
+
+.p2 {
+    font-size: 12px;
+    padding: 32px 24px 0px 24px;
+}
+
+.btnEnter {
+    width: 100%;
+    padding: 147px 24px 0px 24px;
+    --border-radius: 7px;
+}

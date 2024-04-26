@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { NavController } from '@ionic/angular';
+// import { ApiService } from 'src/app/core/services/api.service';
+import { RegisterService } from 'src/app/core/services/register.service';
 
 @Component({
   selector: 'app-register',
@@ -11,7 +13,9 @@ export class RegisterPage implements OnInit {
 
   registerForm: FormGroup;
 
-  constructor(private navCtrl: NavController, private formBuilder: FormBuilder) {
+  private createrUser(): void {}
+
+  constructor(private navCtrl: NavController, private formBuilder: FormBuilder, private registerService: RegisterService) {
     this.registerForm = this.formBuilder.group({
       countryCode: ['+', Validators.required],
       phoneNumber: ['', Validators.required]
@@ -22,7 +26,15 @@ export class RegisterPage implements OnInit {
     this.navCtrl.back();
   }
 
-  ngOnInit() {}
+  ngOnInit(): void {
+    this.createrUser();
+    this.clearLocalStorage();
+  }
+
+  clearLocalStorage(): void {
+    localStorage.clear();
+  }
+
 
   onCountryCodeKeyPress(event: KeyboardEvent) {
     this.allowOnlyNumbersAndNavigation(event);
@@ -32,12 +44,26 @@ export class RegisterPage implements OnInit {
     this.allowOnlyNumbersAndNavigation(event);
   }
 
-  onSubmit() {
-    if (this.registerForm.valid) {
-      // Aqui você pode navegar para a página confirm-number
+async onSubmit() {
+  if (this.registerForm.valid) {
+    const telefone = this.registerForm.get("phoneNumber")?.value;
+    const country = this.registerForm.get("countryCode")?.value;
+    console.log(country, telefone, "<");
+    
+    // localStorage.setItem("telephone", `${country}${telefone}`)
+
+    localStorage.setItem("code", country)
+    localStorage.setItem("telephone", telefone)
+
+
+  await this.registerService.register(this.registerForm.value).subscribe(response => {
+      // salvar valor local storage
+      // Aqui você pode lidar com a resposta da API, como navegar para a próxima página
       this.navCtrl.navigateForward('/confirm-number');
-    }
+    });
   }
+}
+
 
   private allowOnlyNumbersAndNavigation(event: KeyboardEvent) {
     const keyCode = event.keyCode;

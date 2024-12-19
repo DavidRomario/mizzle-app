@@ -1,0 +1,158 @@
+ion-content {
+    --overflow: hidden;
+}
+
+.containerBack {
+    padding: 40px 0px 20px 15px;
+}
+
+.custom.invalid {
+    border: 1px solid red;
+    border-radius: 5px;
+}
+
+.error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+ion-input.custom {
+    --background: #F2F2F2;
+    --placeholder-color: #B3B3B3;
+    --placeholder-opacity: 0.8;
+
+    --padding-bottom: 10px;
+    --padding-end: 10px;
+    --padding-start: 10px;
+    --padding-top: 10px;
+    font-size: 12px;
+    --border-radius: 4px;
+
+}
+
+ion-select.custom {
+    --background: #F2F2F2;
+    --placeholder-color: #B3B3B3;
+    --placeholder-opacity: 0.8;
+
+    --padding-bottom: 10px;
+    --padding-end: 10px;
+    --padding-start: 10px;
+    --padding-top: 10px;
+    font-size: 12px;
+    --border-radius: 4px;
+}
+
+ion-input.customer {
+    --background: #F2F2F2;
+    --placeholder-color: #B3B3B3;
+    --placeholder-opacity: 0.8;
+    --padding-bottom: 10px;
+    --padding-end: 10px;
+    --padding-start: 10px;
+    --padding-top: 10px;
+    font-size: 12px;
+    --border-radius: 4px;
+}
+
+ion-input.descricao {
+    --background: #F2F2F2;
+    --placeholder-color: #B3B3B3;
+    --placeholder-opacity: 0.8;
+    --padding-bottom: 120px;
+    --padding-end: 10px;
+    --padding-start: 10px;
+    --padding-top: 10px;
+    font-size: 12px;
+    --border-radius: 4px;
+
+}
+
+.containerMain {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 24px 0px 24px;
+}
+
+.containerChild {
+    padding-bottom: 15px;
+}
+
+.containerInput {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 0px 0px 24px;
+    font-weight: 700;
+}
+
+.pb {
+    font-size: 14px;
+    padding-bottom: 6px;
+    font-weight: 700;
+}
+
+.p1 {
+    font-size: 24px;
+    width: 342px;
+    height: 40px;
+}
+
+.p2 {
+    font-size: 14px;
+    padding-left: 24px;
+    color: #818181;
+}
+
+.btnEnter {
+    width: 100%;
+    padding: 40px 24px 0px 24px;
+    --border-radius: 7px;
+}
+
+  .image-container {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding-bottom: 20px;
+  }
+
+  .image-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      opacity: 0.5;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      cursor: pointer;
+  }
+
+  .image-item.selected {
+      opacity: 1;
+      transform: scale(1.1);
+  }
+
+  .circle-image {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+  }
+
+  .image-label {
+      margin-top: 8px;
+      font-size: 14px;
+      text-align: center;
+  }
+
+  .input-group {
+      display: flex;
+      gap: 16px;
+  }
+
+  .input-group>div {
+      flex: 1;
+  }
+
+  .customer {
+      width: 100%;
+  }

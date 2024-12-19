@@ -1,9 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { NavController } from '@ionic/angular';
-// import { ApiService } from 'src/app/core/services/api.service';
-import { RegisterService } from 'src/app/core/services/register.service';
-
+import { LoginService } from '../../core/services/login.service';
 
 @Component({
   selector: 'app-login',
@@ -11,13 +15,12 @@ import { RegisterService } from 'src/app/core/services/register.service';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-
-  registerForm: FormGroup;
+  loginForm: FormGroup;
 
   private createrUser(): void {}
 
-  constructor(private navCtrl: NavController, private formBuilder: FormBuilder, private registerService: RegisterService) {
-    this.registerForm = this.formBuilder.group({
+  constructor(private navCtrl: NavController, private formBuilder: FormBuilder, private loginService: LoginService) {
+    this.loginForm = this.formBuilder.group({
       countryCode: ['+', Validators.required],
       phoneNumber: ['', Validators.required]
     });
@@ -46,13 +49,17 @@ export class LoginPage implements OnInit {
   }
 
 async onSubmit() {
-  if (this.registerForm.valid) {
-    const telefone = this.registerForm.get("telefone")?.value;
+  if (this.loginForm.valid) {
+    const telefone = this.loginForm.get("phoneNumber")?.value;
+    const code = this.loginForm.get("countryCode")?.value;
+
     console.log(telefone, "<");
     
     localStorage.setItem("telephone", telefone)
+    localStorage.setItem("code", code)
 
-  await this.registerService.register(this.registerForm.value).subscribe(response => {
+
+  await this.loginService.login(this.loginForm.value).subscribe((response: any) => {
       // salvar valor local storage
       // Aqui você pode lidar com a resposta da API, como navegar para a próxima página
       this.navCtrl.navigateForward('/confirm-number');

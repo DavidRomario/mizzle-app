@@ -31,6 +31,18 @@ const routes: Routes = [
     path: 'confirm-number',
     loadChildren: () => import('./pages/confirm-number/confirm-number.module').then( m => m.ConfirmNumberPageModule)
   },
+  {
+    path: 'confirmed-registration',
+    loadChildren: () => import('./pages/confirmed-registration/confirmed-registration.module').then( m => m.ConfirmedRegistrationPageModule)
+  },
+  {
+    path: 'register-user',
+    loadChildren: () => import('./pages/register-user/register-user.module').then( m => m.RegisterUserPageModule)
+  },
+  {
+    path: 'register-pet',
+    loadChildren: () => import('./pages/register-pet/register-pet.module').then( m => m.RegisterPetPageModule)
+  },
 ];
 
 @NgModule({

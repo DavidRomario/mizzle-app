@@ -1,0 +1,115 @@
+<ion-content [fullscreen]="true">
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div class="containerInput">
+      <p class="p1">Queremos te conhecer mais um pouco</p>
+    </div>
+
+    <p class="p2">Preencha as informações abaixo para criarmos sua conta.</p>
+
+    <div class="containerMain">
+      <div class="containerChild">
+        <p class="pb">Nome Completo</p>
+        <ion-input
+          formControlName="fullName"
+          placeholder="Adicione seu nome completo"
+          class="custom"
+          [class.invalid]="registerForm.get('fullName')?.invalid && registerForm.get('fullName')?.touched"
+        ></ion-input>
+        <div
+          *ngIf="registerForm.get('fullName')?.hasError('required') && registerForm.get('fullName')?.touched"
+          class="error-message"
+        >
+          Campo obrigatório.
+        </div>
+      </div>
+
+      <div class="containerChild">
+        <p class="pb">CPF</p>
+        <ion-input
+          formControlName="cpf"
+          placeholder="***********"
+          class="custom"
+          [class.invalid]="registerForm.get('cpf')?.invalid && registerForm.get('cpf')?.touched"
+        ></ion-input>
+        <div
+          *ngIf="registerForm.get('cpf')?.hasError('pattern') && registerForm.get('cpf')?.touched"
+          class="error-message"
+        >
+          Esse CPF não é válido.
+        </div>
+      </div>
+
+      <div class="containerChild">
+        <p class="pb">Gênero</p>
+        <ion-select
+          formControlName="gender"
+          placeholder="Selecione seu gênero"
+          interface="popover"
+          class="custom"
+          [class.invalid]="registerForm.get('gender')?.invalid && registerForm.get('gender')?.touched"
+        >
+          <ion-select-option value="masculino">Masculino</ion-select-option>
+          <ion-select-option value="feminino">Feminino</ion-select-option>
+          <ion-select-option value="prefiro-nao-dizer"
+            >Prefiro não dizer</ion-select-option
+          >
+        </ion-select>
+        <div
+          *ngIf="registerForm.get('gender')?.hasError('required') && registerForm.get('gender')?.touched"
+          class="error-message"
+        >
+          Campo obrigatório.
+        </div>
+      </div>
+
+      <div class="containerChild">
+        <p class="pb">Data de Nascimento</p>
+        <ion-input
+          formControlName="birthDate"
+          placeholder="Selecione uma data"
+          class="custom"
+          (click)="openDatePicker()"
+          [value]="selectedDate | date: 'dd/MM/yyyy'"
+          readonly
+          [class.invalid]="registerForm.get('birthDate')?.invalid && registerForm.get('birthDate')?.touched"
+        ></ion-input>
+
+        <div *ngIf="showDatePicker">
+          <ion-datetime
+            (ionChange)="onDateSelected($event)"
+            [value]="selectedDate"
+            display-format="DD/MM/YYYY"
+            presentation="date"
+          ></ion-datetime>
+        </div>
+
+        <div
+          *ngIf="registerForm.get('birthDate')?.hasError('required') && registerForm.get('birthDate')?.touched"
+          class="error-message"
+        >
+          Campo obrigatório.
+        </div>
+      </div>
+
+      <div class="containerChild">
+        <p class="pb">Email</p>
+        <ion-input
+          formControlName="email"
+          placeholder="Adicione seu e-mail"
+          class="custom"
+          [class.invalid]="registerForm.get('email')?.invalid && registerForm.get('email')?.touched"
+        ></ion-input>
+        <div
+          *ngIf="registerForm.get('email')?.hasError('email') && registerForm.get('email')?.touched"
+          class="error-message"
+        >
+          Este email não é válido.
+        </div>
+      </div>
+    </div>
+
+    <div class="containerBtn">
+      <ion-button type="submit" class="btnEnter">Confirmar</ion-button>
+    </div>
+  </form>
+</ion-content>

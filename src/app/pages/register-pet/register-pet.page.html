@@ -1,0 +1,120 @@
+<ion-content [fullscreen]="true">
+  <form>
+    <div class="containerBack">
+      <ion-buttons slot="start">
+        <ion-button class="btnInput">
+          <ion-icon name="chevron-back-circle-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </div>
+    <div class="containerInput">
+      <p class="p1">Nos conte sobre o seu pet</p>
+    </div>
+
+    <p class="p2">Preencha corretamente as informações abaixo.</p>
+
+    <div class="containerMain">
+      <div class="containerChild">
+        <p class="pb">Nome do seu pet</p>
+        <ion-input
+          placeholder="Adicione seu nome completo"
+          class="custom"
+        ></ion-input>
+        <div class="error-message">Campo obrigatório.</div>
+      </div>
+
+      <div class="containerChild">
+        <p class="pb">Espécie</p>
+      </div>
+
+      <div class="image-container">
+        <div
+          class="image-item"
+          [class.selected]="selectedImage === 'img1'"
+          (click)="selectImage('img1')"
+        >
+          <img
+            src="../../../assets/icon/dog.webp"
+            alt="Imagem 1"
+            class="circle-image"
+          />
+          <p class="image-label">Gato</p>
+        </div>
+        <div
+          class="image-item"
+          [class.selected]="selectedImage === 'img2'"
+          (click)="selectImage('img2')"
+        >
+          <img
+            src="../../../assets/icon/dog.webp"
+            alt="Imagem 2"
+            class="circle-image"
+          />
+          <p class="image-label">Cachorro</p>
+        </div>
+        <div
+          class="image-item"
+          [class.selected]="selectedImage === 'img3'"
+          (click)="selectImage('img3')"
+        >
+          <img
+            src="../../../assets/icon/dog.webp"
+            alt="Imagem 3"
+            class="circle-image"
+          />
+          <p class="image-label">Outro</p>
+        </div>
+      </div>
+
+      <div class="containerChild">
+        <p class="pb">Espécie</p>
+        <ion-select
+          formControlName="gender"
+          placeholder="Selecione seu gênero"
+          interface="popover"
+          class="custom"
+        >
+          <ion-select-option value="masculino">Masculino</ion-select-option>
+          <ion-select-option value="feminino">Feminino</ion-select-option>
+        </ion-select>
+        <div class="error-message">Campo obrigatório.</div>
+      </div>
+
+      <div class="containerChild">
+        <div class="input-group">
+          <div>
+            <p class="pb">Idade</p>
+            <ion-input placeholder="Qual a idade?" class="customer"></ion-input>
+          </div>
+          <div>
+            <p class="pb">Sexo</p>
+            <ion-select
+              placeholder="Selecione"
+              class="customer"
+              interface="popover"
+              class="custom"
+            >
+              <ion-select-option value="masculino">Masculino</ion-select-option>
+              <ion-select-option value="feminino"
+                >Feminino</ion-select-option
+              ></ion-select
+            >
+          </div>
+        </div>
+        <div class="error-message">Campo obrigatório.</div>
+      </div>
+
+      <div class="containerChild">
+        <p class="pb">informações adicionais. (Opcional)</p>
+        <ion-input
+          placeholder="Exemplo: cor, apelido, comportamento, peso..."
+          class="descricao"
+        ></ion-input>
+      </div>
+    </div>
+
+    <div class="containerBtn">
+      <ion-button type="submit" class="btnEnter">Confirmar</ion-button>
+    </div>
+  </form>
+</ion-content>
